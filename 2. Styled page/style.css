@@ -116,6 +116,11 @@ main article:nth-child(even) {
   padding-left: 1rem;
 }
 
+main article:first-of-type p:nth-of-type(2) {
+  font-weight: bold;
+  color: blue;
+}
+
 main article p {
   padding-bottom: 1rem;
 }
@@ -129,6 +134,10 @@ main article img {
   padding: 3rem 2rem;
   margin-left: 5rem;
   background-color: var(--third-bg-color);
+}
+
+#sidebar ol > li:nth-child(odd) {
+  color: var(--warning-color);
 }
 
 footer {
