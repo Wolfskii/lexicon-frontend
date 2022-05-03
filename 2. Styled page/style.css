@@ -17,6 +17,8 @@
   --secondary-bg-color: #171d37;
   --third-bg-color: #30395e;
   --accent-color: #192d7e;
+  --secondary-accent-color: #0c9224;
+  --warning-color: #c00f0f;
   --main-text-color: #ffffff;
   --faded-text-color: #e5e5e5;
 }
@@ -142,10 +144,16 @@ footer {
 
 #login-page h2 {
   padding-bottom: 2rem;
+  text-transform: uppercase;
 }
 
 .login-form {
   width: 40rem;
+  height: 20rem;
+  padding: 2rem;
+  background-color: var(--third-bg-color);
+  border: 2px solid var(--secondary-bg-color);
+  border-radius: 10px;
 }
 
 .login-form * {
@@ -164,7 +172,7 @@ footer {
 .login-form input {
   display: block;
   height: 3rem;
-  width: 100%;
+  width: 65%;
   background-color: var(--secondary-bg-color);
   border-radius: 3px;
   padding: 0 0.6rem;
@@ -189,7 +197,12 @@ footer {
   cursor: pointer;
 }
 
-.login-form button:hover {
-  background-color: var(--accent-color);
+.login-form button:hover[type='reset'] {
+  background-color: var(--warning-color);
+  color: var(--main-text-color);
+}
+
+.login-form button[type='submit']:hover {
+  background-color: var(--secondary-accent-color);
   color: var(--main-text-color);
 }
