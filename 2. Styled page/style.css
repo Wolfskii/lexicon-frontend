@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'NeueHaasMedium';
+  src: local('NeueHaasMedium'),
+    url(./fonts/NeueHaasDisplayMedium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NeueHaasRoman';
+  src: local('NeueHaasRoman'),
+    url(./fonts/NeueHaasDisplayRoman.ttf) format('truetype');
+}
+
+:root {
+  font-size: clamp(12px, calc(12px + ((1vw - 0.8rem) * 1.1)), 2rem);
+  line-height: 1.4rem;
+  --main-bg-color: #3b4053;
+  --secondary-bg-color: #171d37;
+  --third-bg-color: #30395e;
+  --accent-color: #192d7e;
+  --main-text-color: #ffffff;
+  --faded-text-color: #e5e5e5;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: NeueHaasRoman, sans-serif;
+  color: var(--main-text-color);
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: NeueHaasMedium;
+}
+
+html {
+  display: grid;
+  justify-items: center;
+}
+
+body {
+  width: 1024px;
+  height: 100%;
+  display: grid;
+  grid-template: auto 1fr auto / 1fr auto;
+  background-color: var(--main-bg-color);
+}
+
+header {
+  grid-column: 1 / 3;
+  background-color: var(--secondary-bg-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 1rem;
+}
+
+header > h1 {
+  padding-right: 1rem;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+header li {
+  float: left;
+}
+
+header li:last-child {
+  float: right;
+}
+
+header li a {
+  display: block;
+  color: var(--main-text-color);
+  text-align: center;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+}
+
+header li a:hover:not(.active) {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+main {
+  grid-column: 1 / 2;
+  padding: 3rem 2rem;
+}
+
+main article {
+  float: left;
+  width: calc(50% - 1rem);
+  padding: 2rem 0;
+}
+
+main article:nth-child(odd) {
+  padding-right: 1rem;
+}
+
+main article:nth-child(even) {
+  padding-left: 1rem;
+}
+
+main article p {
+  padding-bottom: 1rem;
+}
+
+main article img {
+  width: 100%;
+}
+
+#sidebar {
+  grid-column: 2 / 3;
+  padding: 3rem 2rem;
+  margin-left: 5rem;
+  background-color: var(--third-bg-color);
+}
+
+footer {
+  grid-column: 1 / 3;
+  background-color: var(--secondary-bg-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+#login-page {
+  margin: 0 auto;
+}
+
+#login-page h2 {
+  padding-bottom: 2rem;
+}
+
+.login-form {
+  width: 40rem;
+}
+
+.login-form * {
+  color: var(--main-text-color);
+  letter-spacing: 0.05rem;
+  outline: none;
+  border: none;
+}
+
+.login-form label {
+  display: block;
+  margin-top: 1.4rem;
+  font-size: 1.1rem;
+}
+
+.login-form input {
+  display: block;
+  height: 3rem;
+  width: 100%;
+  background-color: var(--secondary-bg-color);
+  border-radius: 3px;
+  padding: 0 0.6rem;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+}
+
+.login-form ::placeholder {
+  color: var(--faded-text-color);
+}
+
+.login-form button {
+  float: left;
+  width: 6rem;
+  margin: 2rem 2rem 2rem 0;
+  background-color: var(--main-text-color);
+  color: var(--secondary-bg-color);
+  padding: 0.6rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: var(--accent-color);
+  color: var(--main-text-color);
+}
